@@ -74,6 +74,9 @@ class CheckoutController extends Controller
             // If call returns body in response, you can get the deserialized version from the result attribute of the response
             dd($response);
             //بخزن في الداتابيز انه دفع
+            if ($response->statusCode == 201){
+                dd('sucess');
+            }
         } catch (HttpException $ex) {
             echo $ex->statusCode;
             dd($ex->getMessage());
